@@ -14,3 +14,12 @@ function toggleContent(dotsId, moreTextId, btnId) {
     moreText.style.display = "inline";
   }
 }
+
+// GSAP Animation for Overview Image
+gsap.from(".overview_img_wrapper", {
+  x: -60,
+  opacity: 0,
+  duration: 1.2,
+  ease: "power3.out",
+  delay: 0.2,
+});

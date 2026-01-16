@@ -3,8 +3,7 @@ const menuTrigger = document.getElementById("menuTrigger");
 const mobileNav = document.getElementById("mobileNav");
 const backdrop = document.getElementById("backdrop");
 const mobileNavItems = document.querySelectorAll(".mobile-nav-item");
-const mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
-const desktopNavLinks = document.querySelectorAll(".nav-link-desktop");
+const allNavLinks = document.querySelectorAll(".nav-link");
 const floatingHeader = document.querySelector(".floating-header");
 
 let isMenuOpen = false;
@@ -48,40 +47,13 @@ function toggleMenu() {
 menuTrigger.addEventListener("click", toggleMenu);
 backdrop.addEventListener("click", toggleMenu);
 
-// Close menu when clicking a link
+// Close mobile menu when clicking a link
+const mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
 mobileNavLinks.forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    // Update active state
-    mobileNavLinks.forEach((l) => l.classList.remove("active"));
-    link.classList.add("active");
-
-    // Update desktop active state
-    const href = link.getAttribute("href");
-    desktopNavLinks.forEach((l) => {
-      l.classList.toggle("active", l.getAttribute("href") === href);
-    });
-
-    // Close menu
-    toggleMenu();
-  });
-});
-
-// Desktop nav active state
-desktopNavLinks.forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    // Update active state
-    desktopNavLinks.forEach((l) => l.classList.remove("active"));
-    link.classList.add("active");
-
-    // Update mobile active state
-    const href = link.getAttribute("href");
-    mobileNavLinks.forEach((l) => {
-      l.classList.toggle("active", l.getAttribute("href") === href);
-    });
+  link.addEventListener("click", () => {
+    if (isMenuOpen) {
+      toggleMenu();
+    }
   });
 });
 
@@ -108,7 +80,8 @@ gsap.from(".glass-container", {
   delay: 0.2,
 });
 
-// Subtle hover animations for nav pills
+// Subtle hover animations for desktop nav pills
+const desktopNavLinks = document.querySelectorAll(".nav-link-desktop");
 desktopNavLinks.forEach((link) => {
   link.addEventListener("mouseenter", () => {
     gsap.to(link, {
@@ -124,5 +97,50 @@ desktopNavLinks.forEach((link) => {
       duration: 0.3,
       ease: "power2.out",
     });
+  });
+});
+
+// Initialize Bootstrap ScrollSpy
+const scrollSpy = new bootstrap.ScrollSpy(document.body, {
+  target: "#main-navbar",
+  rootMargin: "0px 0px -50%",
+  smoothScroll: true,
+  offset: 100,
+});
+
+// Listen for activate events from ScrollSpy
+const navLinks = document.querySelectorAll("#main-navbar .nav-link");
+
+navLinks.forEach((link) => {
+  link.addEventListener("activate.bs.scrollspy", function (event) {
+    // This event fires on the specific link that becomes active
+    console.log("Activated:", this.getAttribute("href"));
+  });
+});
+
+// Alternative: Listen on body for all scrollspy activations
+window.addEventListener("scroll", () => {
+  const sections = document.querySelectorAll("section[id]");
+  const scrollPosition = window.scrollY + 150; // Offset for fixed header
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    const sectionId = section.getAttribute("id");
+
+    if (
+      scrollPosition >= sectionTop &&
+      scrollPosition < sectionTop + sectionHeight
+    ) {
+      // Remove active from all links
+      allNavLinks.forEach((link) => link.classList.remove("active"));
+
+      // Add active to matching links
+      allNavLinks.forEach((link) => {
+        if (link.getAttribute("href") === `#${sectionId}`) {
+          link.classList.add("active");
+        }
+      });
+    }
   });
 });
