@@ -58,10 +58,20 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet" />
 
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
+
+    <!-- GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
     <!-- Custom CSS & JS  -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/header.css" />
     <script defer src="js/script.js"></script>
+    <script defer src="js/header.js"></script>
   </head>
   <body
     data-bs-spy="scroll"
@@ -72,83 +82,93 @@
     tabindex="0"
     data-offset="1">
     <!-- Header Starts  -->
-    <header class="fixed-top shadow-sm">
-      <nav
-        class="navbar navbar-expand-lg mx-auto"
-        style="background-color: #ffffff"
-        id="main-navbar">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">
-            <img
-              src="img/logo/logo.png"
-              srcset="img/logo/logo.svg"
-              alt="Logo"
-              height="50px"
-              style="padding-left: 10%" />
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"> </span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="#slider_section">
-                  <i class="fa-solid fa-house nav-icon"></i>
-                  <span class="d-sm-inline"> Home </span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#overview_section">
-                  <i class="fa-solid fa-coins nav-icon"></i>
-                  <span class="d-sm-inline"> Overview </span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#gallery_section">
-                  <i class="fa-solid fa-images nav-icon"></i>
-                  <span class="d-sm-inline"> Gallery </span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#configuration_section">
-                  <i class="fa-solid fa-sliders nav-icon"></i>
-                  <span class="d-sm-inline"> Configuration </span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#amenities_section">
-                  <i class="fa-solid fa-wifi nav-icon"></i>
-                  <span class="d-sm-inline"> Amenities </span>
-                </a>
-              </li>
 
-              <li class="nav-item">
-                <a class="nav-link" href="#location_section">
-                  <i class="fa-solid fa-map-location nav-icon"></i>
-                  <span class="d-sm-inline"> Location </span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#about_section">
-                  <i class="fa-solid fa-user nav-icon"></i>
-                  <span class="d-sm-inline"> About Us </span>
-                </a>
-              </li>
-            </ul>
-          </div>
+    <!-- Backdrop Overlay -->
+    <div class="backdrop" id="backdrop"></div>
+
+    <!-- Floating Header -->
+    <header class="floating-header">
+      <div class="glass-container">
+        <!-- Logo Section -->
+        <div class="logo-section">
+          <!-- <div class="logo-icon">L</div>
+          <span class="logo-text">Logo</span> -->
+          <img
+            src="img/logo/logo.png"
+            alt="Logo"
+            height="50px"
+            style="padding-left: 10%" />
         </div>
-      </nav>
+
+        <!-- Center Navigation (Desktop) -->
+        <nav class="center-nav">
+          <div class="nav-pill">
+            <a href="#home" class="active nav-link-desktop">Home</a>
+            <a href="#overview" class="nav-link-desktop">Overview</a>
+            <a href="#gallery" class="nav-link-desktop">Gallery</a>
+            <a href="#configuration" class="nav-link-desktop">Configuration</a>
+            <a href="#amenities" class="nav-link-desktop">Amenities</a>
+            <a href="#location" class="nav-link-desktop">Location</a>
+            <a href="#about" class="nav-link-desktop">About Us</a>
+          </div>
+        </nav>
+
+        <!-- Menu Trigger (Mobile) -->
+        <div class="menu-trigger" id="menuTrigger">
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+        </div>
+      </div>
     </header>
+
+    <!-- Mobile Navigation Panel -->
+    <div class="mobile-nav" id="mobileNav">
+      <div class="mobile-nav-content">
+        <div class="mobile-nav-item" style="transition-delay: 0.05s">
+          <a href="#home" class="mobile-nav-link active">
+            Home
+            <i class="bi bi-chevron-right"></i>
+          </a>
+        </div>
+        <div class="mobile-nav-item" style="transition-delay: 0.1s">
+          <a href="#overview" class="mobile-nav-link">
+            Overview
+            <i class="bi bi-chevron-right"></i>
+          </a>
+        </div>
+        <div class="mobile-nav-item" style="transition-delay: 0.15s">
+          <a href="#gallery" class="mobile-nav-link">
+            Gallery
+            <i class="bi bi-chevron-right"></i>
+          </a>
+        </div>
+        <div class="mobile-nav-item" style="transition-delay: 0.2s">
+          <a href="#configuration" class="mobile-nav-link">
+            Configuration
+            <i class="bi bi-chevron-right"></i>
+          </a>
+        </div>
+        <div class="mobile-nav-item" style="transition-delay: 0.25s">
+          <a href="#amenities" class="mobile-nav-link">
+            Amenities
+            <i class="bi bi-chevron-right"></i>
+          </a>
+        </div>
+        <div class="mobile-nav-item" style="transition-delay: 0.3s">
+          <a href="#location" class="mobile-nav-link">
+            Location
+            <i class="bi bi-chevron-right"></i>
+          </a>
+        </div>
+        <div class="mobile-nav-item" style="transition-delay: 0.35s">
+          <a href="#about" class="mobile-nav-link">
+            About Us
+            <i class="bi bi-chevron-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
     <!-- Header Ends  -->
     <main>
       <!-- Slider Section -->
@@ -207,6 +227,92 @@
         </div>
       </section>
       <!-- Slider Section Ends -->
+
+      <!-- Overview Section  -->
+      <section id="overview_section" class="container-fluid p-4">
+        <div class="background_img"></div>
+        <div class="section_heading">
+          <h2 class="section-heading text-center text-uppercase">
+            Welcome To Gami Palm Amore
+          </h2>
+        </div>
+
+        <div class="row mt-4 justify-content-center text-center">
+          <div class="col-12 col-md-5 mt-2 pt-2">
+            <div class="overview_img_wrapper">
+              <img
+                class="overview_img"
+                src="./img/overview/overview.webp"
+                alt=""
+                width="100%"
+                height="400px" />
+            </div>
+          </div>
+
+          <!-- Highlights Section -->
+          <div class="col-12 col-md-6 mt-2 pt-2">
+            <div class="highlights-section">
+              <div>
+                <span>
+                  Gami Palm Amore is an excellently designed gated community
+                  along the Palm Beach Road in Seawoods. The multiple elevations
+                  comprise a range of 2 BHK, 3 BHK, 4 BHK, and 5 BHK apartments.
+                  These spacious apartments come with an extensive deck in the
+                  living room and a balcony in the master bedroom. The designer
+                  residences exhibit a blend of exclusivity and grace. This
+                  gated community has a 24/7 water supply and power backup for
+                  common areas and lifts. Moreover, it also features 43+
+                  exquisite lifestyle amenities for recreation, social wellness,
+                  fitness, and entertainment. It includes a swimming pool with
+                  deck, kids’ play area, squash court, badminton court,
+                  gymnasium with a dedicated gym for women, yoga lawn, banquet
+                  hall, reading room, music library, etc.
+                </span>
+                <span id="dots30" style="display: inline"></span>
+                <span id="more30" style="display: none">
+                  <span>
+                    <br /><br />
+                    Situated in the esteemed neighbourhood of the Palm Beach
+                    Road, it has some of the finest social landmarks. DAV Public
+                    School, Delhi Public School, Jewel of Navi Mumbai, DY Patil
+                    University, Apollo Hospital, Podar International School,
+                    Healing Hands Clinic, Seawoods Grand Central Mall, Dmart,
+                    Zudio, and Wonder’s Park are nearby. Being adjacent to the
+                    Palm Beach Road, it is well-connected to the commercial hubs
+                    of Navi Mumbai. Sion Panvel Highway and Seawoods Railway
+                    Station are 5-10 minutes away. The Atal Setu and the
+                    upcoming Navi Mumbai International Airport are just a
+                    20-minute drive away via the Airport Road. So, embrace
+                    exclusivity with the designer residences of Gami Palm Amore
+                    in Seawoods.
+                  </span>
+                </span>
+                <br />
+                <div class="text-center my-3">
+                  <span
+                    class="read_more2"
+                    onclick="toggleContent('dots30','more30', 'myBtn30')"
+                    id="myBtn30">
+                    Read More
+                  </span>
+                </div>
+              </div>
+
+              <div class="text-center">
+                <button
+                  class="btn btn-primary-estate me-3 mb-3 download_btn"
+                  data-bs-toggle="modal"
+                  data-bs-target="#popupModal"
+                  data-modal-title="Download Brochure">
+                  <i class="fa-solid fa-download fa-shake"></i>
+                  Download Brochure
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Overview Section Ends -->
     </main>
   </body>
 </html>
