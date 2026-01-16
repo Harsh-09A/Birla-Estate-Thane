@@ -86,7 +86,7 @@ body {
 }
 
 .nav-pill .nav-link:hover {
-  color: #ffffff;
+  color: #850f6f;
 }
 
 .nav-pill .nav-link.active {
@@ -122,7 +122,8 @@ body {
 .menu-line {
   width: 20px;
   height: 2px;
-  background: #ffffff;
+  /* background: #ffffff; */
+  background: var(--colorPrimary);
   border-radius: 2px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   transform-origin: center;
@@ -156,6 +157,7 @@ body {
   z-index: 999;
   transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
 }
 
 .mobile-nav.active {
@@ -193,7 +195,7 @@ body {
 .mobile-nav-item a.active {
   background: rgba(212, 175, 55, 0.12);
   border-color: rgba(212, 175, 55, 0.3);
-  color: #d4af37 !important;
+  color: #850f6f !important;
   transform: translateX(8px);
 }
 
