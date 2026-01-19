@@ -59,6 +59,16 @@ body {
   display: none;
 }
 
+@media screen and (min-width: 600px) and (max-width: 1450px) {
+  .center-nav {
+    transform: translateX(-36%);
+    -webkit-transform: translateX(-36%);
+    -moz-transform: translateX(-36%);
+    -ms-transform: translateX(-36%);
+    -o-transform: translateX(-36%);
+  }
+}
+
 .nav-pill {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.1);
