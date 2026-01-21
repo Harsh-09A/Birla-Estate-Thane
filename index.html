@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,14 +6,23 @@
     <title>Birla Estate Thane</title>
 
     <!-- SEO -->
-    <meta property="og:title" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:image" content="" />
-    <meta property="og:description" content="" />
+    <meta property="og:title" content="Birla Estate Thane" />
+    <meta
+      property="og:url"
+      content="https://premiumpropertiesnavimumbai.com/birla-estates-thane" />
+    <meta
+      property="og:image"
+      content="https://premiumpropertiesnavimumbai.com/birla-estates-thane/img/overview/overview.webp" />
+    <meta
+      property="og:description"
+      content=" Birla Estates Thane is an upcoming premium residential development in Kalwa, Thane." />
     <meta name="robots" content="index, follow" />
+    <meta
+      name="description"
+      content=" Birla Estates Thane is an upcoming premium residential development in Kalwa, Thane." />
 
     <!-- Favicon -->
-    <link rel="icon" href="img/logo/favicon.jpg" sizes="16x16" />
+    <link rel="icon" href="img/logo/favicon.png" sizes="16x16" />
 
     <!-- Bootstrap CDN -->
     <link
@@ -31,6 +40,9 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
       integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
       crossorigin="anonymous"></script>
+
+    <!-- jQuery  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <!-- Font Awesome CDN -->
     <link
@@ -428,6 +440,12 @@
             <div class="row">
               <div class="col-lg-5 col-xs-12">
                 <div class="config-inner">
+                  <div class="plan-image">
+                    <img
+                      class="img-fluid"
+                      src="img/plans/birla-thane-floorplan-2bhk.webp"
+                      alt="" />
+                  </div>
                   <h5 class="config-room">2 BHK</h5>
                   <p class="config-size">RERA carpet area - 700-800 sq.ft.</p>
                   <div
@@ -435,7 +453,7 @@
                     data-bs-toggle="modal"
                     data-bs-target="#popupModal">
                     <a href="javascript:void(0)" class="pricepop">
-                      ₹ 1.47 Cr. Onwards*
+                      ₹ On Request*
                     </a>
                   </div>
                 </div>
@@ -443,6 +461,12 @@
 
               <div class="col-lg-5 col-xs-12">
                 <div class="config-inner">
+                  <div class="plan-image">
+                    <img
+                      class="img-fluid"
+                      src="img/plans/birla-thane-floorplan-3bhk.webp"
+                      alt="" />
+                  </div>
                   <h5 class="config-room">3 BHK</h5>
                   <p class="config-size">RERA carpet area - 1000-1200 sq.ft.</p>
                   <div
@@ -450,7 +474,7 @@
                     data-bs-toggle="modal"
                     data-bs-target="#popupModal">
                     <a href="javascript:void(0)" class="pricepop">
-                      ₹ 2.31 Cr. Onwards*
+                      ₹ On Request*
                     </a>
                   </div>
                 </div>
@@ -796,11 +820,11 @@
                     <div class="location-card" data-point="metro">
                       <div class="location-info">
                         <h4 class="location-name">
-                          <i class="fas fa-road"></i> Mumbai - Thane Metro
+                          <i class="fas fa-road"></i> Diga Railway Station
                         </h4>
                       </div>
                       <div class="time-badge">
-                        <i class="fas fa-clock"></i> 4 Mins
+                        <i class="fas fa-clock"></i> 2 Mins
                       </div>
                     </div>
 
@@ -941,7 +965,7 @@
                     </span>
                   </div>
                   <button
-                    onclick="toggleContent('dots8','more8', 'myBtn8')"
+                    onclick="toggleContent('dots8', 'more8', 'myBtn8')"
                     class="read_more"
                     id="myBtn8">
                     Read More
@@ -1000,7 +1024,11 @@
                             name="contact_number"
                             pattern="[0-9]{10}"
                             placeholder="Phone Number"
-                            oninvalid="setCustomValidity('Please enter a valid phone number. e.g., 12345-67890')"
+                            oninvalid="
+                              setCustomValidity(
+                                'Please enter a valid phone number. e.g., 12345-67890',
+                              )
+                            "
                             oninput="setCustomValidity('')"
                             required />
                         </div>
@@ -1118,7 +1146,7 @@
             <br />
             <span
               class="read_more2"
-              onclick="toggleContent('dots20','more20', 'myBtn20')"
+              onclick="toggleContent('dots20', 'more20', 'myBtn20')"
               id="myBtn20">
               Read More
             </span>
@@ -1231,7 +1259,11 @@
                         maxlength="10"
                         pattern="[0-9]{10}"
                         placeholder="Phone Number *"
-                        oninvalid="setCustomValidity('Please enter a valid phone number. e.g., 12345-67890')"
+                        oninvalid="
+                          setCustomValidity(
+                            'Please enter a valid phone number. e.g., 12345-67890',
+                          )
+                        "
                         oninput="setCustomValidity('')"
                         required />
                     </div>
@@ -1312,13 +1344,12 @@
             <i class="fa-solid fa-taxi fa-beat nav-icon"> </i> Site Visit
           </a>
         </li>
-        <li
-          class="nav-item ps-1"
-          data-bs-toggle="modal"
-          data-bs-target="#popupModal"
-          data-modal-title="Call Back">
-          <a class="text-decoration-none">
-            <i class="fa-solid fa-phone fa-beat me-2"></i> Call Back
+        <li class="nav-item ps-1" data-modal-title="Call Now">
+          <a
+            class="text-decoration-none"
+            onclick="return gtag_report_conversion('tel:+919145457464');"
+            href="tel:+919145457464">
+            <i class="fa-solid fa-phone fa-beat me-2"></i> Call Now
           </a>
         </li>
         <li

@@ -23,3 +23,10 @@ gsap.from(".overview_img_wrapper", {
   ease: "power3.out",
   delay: 0.2,
 });
+
+// Popup Auto
+$(window).ready(function () {
+  setTimeout(function () {
+    $("#popupModal").modal("show");
+  }, 3000);
+});

@@ -236,7 +236,8 @@ header {
   border: 5px double var(--colorPrimary);
   padding: 7px;
   background-color: #f1f1f1;
-  box-shadow: rgba(14, 30, 37, 0.5) 0px 2px 4px 0px,
+  box-shadow:
+    rgba(14, 30, 37, 0.5) 0px 2px 4px 0px,
     rgba(14, 30, 37, 0.5) 0px 2px 16px 0px;
 }
 
@@ -988,4 +989,18 @@ header {
 .policy_links a {
   color: var(--colorPrimary) !important;
   text-decoration: none;
+}
+
+.custom-control-label {
+  font-size: x-small !important;
+}
+
+.plan-image img {
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+}
+.plan-image {
+  border-bottom: 5px double var(--colorPrimary);
+
+  margin-bottom: 10px;
 }
