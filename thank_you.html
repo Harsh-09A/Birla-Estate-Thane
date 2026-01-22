@@ -1,9 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-16841506878"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "AW-16841506878");
+    </script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{Project Name}</title>
+    <title>Birla Estates Thane</title>
 
     <!-- SEO -->
     <meta property="og:title" content="" />
@@ -61,7 +74,9 @@
     <!-- Custom CSS & JS  -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/header.css" />
     <script defer src="js/script.js"></script>
+    <script defer src="js/header.js"></script>
   </head>
   <body
     data-bs-spy="scroll"
@@ -71,84 +86,106 @@
     class="scrollspy"
     tabindex="0"
     data-offset="1">
-    <!-- Header  -->
-    <header class="fixed-top shadow-sm">
-      <nav
-        class="navbar navbar-expand-lg mx-auto"
-        style="background-color: #ffffff"
-        id="main-navbar">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">
-            <img
-              id="logo"
-              src="img/logo/logo.svg"
-              alt="Logo"
-              height="60px"
-              style="padding-left: 10%" />
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"> </span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="index.html#slider_section">
-                  <i class="fa-solid fa-house nav-icon"></i>
-                  <span class="d-sm-inline"> Home </span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="index.html#overview_section">
-                  <i class="fa-solid fa-coins nav-icon"></i>
-                  <span class="d-sm-inline"> Overview </span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="index.html#gallery_section">
-                  <i class="fa-solid fa-images nav-icon"></i>
-                  <span class="d-sm-inline"> Gallery </span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="index.html#configuration_section">
-                  <i class="fa-solid fa-sliders nav-icon"></i>
-                  <span class="d-sm-inline"> Configuration </span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="index.html#amenities_section">
-                  <i class="fa-solid fa-wifi nav-icon"></i>
-                  <span class="d-sm-inline"> Amenities </span>
-                </a>
-              </li>
+    <!-- Header Starts  -->
+    <!-- Backdrop Overlay -->
+    <div class="backdrop" id="backdrop"></div>
 
-              <li class="nav-item">
-                <a class="nav-link" href="index.html#location_section">
-                  <i class="fa-solid fa-map-location nav-icon"></i>
-                  <span class="d-sm-inline"> Location </span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="index.html#about_section">
-                  <i class="fa-solid fa-user nav-icon"></i>
-                  <span class="d-sm-inline"> About Us </span>
-                </a>
-              </li>
-            </ul>
-          </div>
+    <!-- Floating Header -->
+    <header class="floating-header">
+      <div class="glass-container">
+        <!-- Logo Section -->
+        <div class="logo-section">
+          <!-- <div class="logo-icon">L</div>
+          <span class="logo-text">Logo</span> -->
+          <img
+            src="img/logo/logo.png"
+            alt="Logo"
+            height="50px"
+            style="padding-left: 10%" />
         </div>
-      </nav>
+
+        <!-- Center Navigation (Desktop) -->
+        <nav class="center-nav" id="main-navbar">
+          <div class="nav-pill">
+            <a href="#slider_section" class="nav-link nav-link-desktop">Home</a>
+            <a href="#overview_section" class="nav-link nav-link-desktop"
+              >Overview</a
+            >
+            <a href="#gallery_section" class="nav-link nav-link-desktop"
+              >Gallery</a
+            >
+            <a href="#configuration_section" class="nav-link nav-link-desktop"
+              >Configuration</a
+            >
+            <a href="#amenities_section" class="nav-link nav-link-desktop"
+              >Amenities</a
+            >
+            <a href="#location_section" class="nav-link nav-link-desktop"
+              >Location</a
+            >
+            <a href="#about_section" class="nav-link nav-link-desktop"
+              >About Us</a
+            >
+          </div>
+        </nav>
+
+        <!-- Menu Trigger (Mobile) -->
+        <div class="menu-trigger" id="menuTrigger">
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+        </div>
+      </div>
     </header>
+
+    <!-- Mobile Navigation Panel -->
+    <div class="mobile-nav" id="mobileNav">
+      <div class="mobile-nav-content">
+        <div class="mobile-nav-item" style="transition-delay: 0.05s">
+          <a href="#slider_section" class="mobile-nav-link nav-link">
+            Home
+            <i class="bi bi-chevron-right"></i>
+          </a>
+        </div>
+        <div class="mobile-nav-item" style="transition-delay: 0.1s">
+          <a href="#overview_section" class="mobile-nav-link nav-link">
+            Overview
+            <i class="bi bi-chevron-right"></i>
+          </a>
+        </div>
+        <div class="mobile-nav-item" style="transition-delay: 0.15s">
+          <a href="#gallery_section" class="mobile-nav-link nav-link">
+            Gallery
+            <i class="bi bi-chevron-right"></i>
+          </a>
+        </div>
+        <div class="mobile-nav-item" style="transition-delay: 0.2s">
+          <a href="#configuration_section" class="mobile-nav-link nav-link">
+            Configuration
+            <i class="bi bi-chevron-right"></i>
+          </a>
+        </div>
+        <div class="mobile-nav-item" style="transition-delay: 0.25s">
+          <a href="#amenities_section" class="mobile-nav-link nav-link">
+            Amenities
+            <i class="bi bi-chevron-right"></i>
+          </a>
+        </div>
+        <div class="mobile-nav-item" style="transition-delay: 0.3s">
+          <a href="#location_section" class="mobile-nav-link nav-link">
+            Location
+            <i class="bi bi-chevron-right"></i>
+          </a>
+        </div>
+        <div class="mobile-nav-item" style="transition-delay: 0.35s">
+          <a href="#about_section" class="mobile-nav-link nav-link">
+            About Us
+            <i class="bi bi-chevron-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Header Ends  -->
     <main>
       <section id="thanku_section" class="container mt-5 p-4">
         <div class="text-center">
@@ -166,70 +203,76 @@
     <!-- Footer -->
     <footer id="footer">
       <div class="container text-center text-white">
-        <div class="d-flex justify-content-center">
+        <!-- <div class="d-flex justify-content-center">
           <div class="qrcode">
-            <img src="img/qr/qr.webp" class="m-2" />
+            <img src="img/logo/footer logo.png" />
           </div>
+        </div> -->
+
+        <div class="">
+          <small>
+            <style>
+              .newlist {
+                list-style: none;
+                line-height: 25px;
+                padding-left: 22px;
+                text-align: center;
+              }
+              .newlist li:before {
+                content: "✓";
+                font-weight: 800;
+                margin-right: 10px;
+                font-size: 13px;
+                margin-left: -22px;
+              }
+            </style>
+            <ul class="newlist">
+              <!-- <li>
+                Project Registered under Government of India RERA Act 2016
+              </li> -->
+              <li>Project RERA Registration No:- Coming Soon</li>
+              <li>
+                Authorised Advertiser's RERA Registration No:- A51700036861
+              </li>
+              <li>
+                <b>Site Address: </b> Pune - Mumbai Hwy, Indal Colony,
+                Kharegaon, Kalwa, Thane, Maharashtra 400605
+              </li>
+            </ul>
+          </small>
         </div>
         <div>
-          <p>MahaRERA Registration No.: P51800020208</p>
-
-          <p>
-            <a
-              href="https://maharera.mahaonline.gov.in"
-              style="color: #fff; text-decoration: none">
-              maharera.mahaonline.gov.in
-            </a>
-          </p>
-
-          <!-- <div class="text-center">
-                  <p class="contact_details">
-                      <b> Site Address:-</b> ---
-                      <br />
-                      <b> Contact No:-</b> +91 ---
-                      <br />
-                      <b> Email Address:-</b> support@---.com
-                  </p>
-              </div> -->
-
           <div>
             <span>
-              Disclaimer : The information provided on this website is intended
-              exclusively for informational purposes and the pricing information
-              presented on this website is subject to alteration without advance
-              notification, and the assurance of property availability cannot be
-              guaranteed. The images showcased on this website are for
-              representational purposes only and may not accurately reflect the
-              actual properties. Please Note That This Is The Official Website
-              Of ------- by -----------.
+              Disclaimer :This website is managed by an official marketing
+              partner with Rera No. is A51700036861. We are an authorised
+              marketing partner for this project. The information provided on
+              this website is intended exclusively for informational purposes.
+              This Website Is Not An Official Site And It Belongs To The
+              Authorized Marketing Partner. All rights reserved. The content,
+              design, and information on this website are protected by copyright
+              and other intellectual property rights. Any unauthorized use or
+              reproduction of the content may violate applicable laws.
             </span>
             <span id="dots20" style="display: inline"></span>
             <span id="more20" style="display: none">
               <span>
-                We May Share Data With Real Estate Regulatory Authority (RERA)
-                Registered Brokers/Companies For Further Processing As Required.
-                We May Also Send Updates And Information To The Mobile Number Or
-                Email ID Registered With Us. All rights reserved. The content,
-                design, and information on this website are protected by
-                copyright and other intellectual property rights. Any
-                unauthorized use or reproduction of the content may violate
-                applicable laws. For accurate and up-to-date information
-                regarding services, pricing, availability, and any other
-                details, it is recommended to contact us directly through the
-                provided contact information on this website. Thank you for
-                visiting our website.
+                For accurate and up-to-date information regarding services,
+                pricing, availability, and any other details, it is recommended
+                to contact us directly through the provided contact information
+                on this website. Thank you for visiting our website.
               </span>
             </span>
             <br />
             <span
               class="read_more2"
-              onclick="toggleContent('dots20','more20', 'myBtn20')"
+              onclick="toggleContent('dots20', 'more20', 'myBtn20')"
               id="myBtn20">
               Read More
             </span>
           </div>
 
-          <p class="pb-4 pt-2">
+          <p class="pb-4 policy_links mt-2">
             <a
               href="privacy_policy.html"
               target="_blank"
@@ -244,62 +287,47 @@
               Terms And Conditions
             </a>
           </p>
+
+          <div class="mt-2">
+            <!-- <p>
+              Copyright © 2025 Invicta (Avianna Infra LLP). All RightsReserved.
+            </p> -->
+            <p class="pb-4 policy_links">
+              Designed & Developed by
+              <a
+                href="https://letsdigin.in/"
+                target="_blank"
+                style="text-decoration: none"
+                >DigIN Media</a
+              >
+            </p>
+          </div>
         </div>
       </div>
     </footer>
 
-    <!-- Mobile Footer Fixed Button -->
-    <div class="container-fluid fixed-bottom action-footer-container">
-      <ul class="nav nav-fill action-footer">
-        <li class="nav-item ps-1">
-          <a
-            onclick="return gtag_report_conversion('https://wa.me/+91123456789 ');"
-            href="https://wa.me/+91123456789 "
-            class="text-decoration-none text-white">
-            <i class="fa-brands fa-whatsapp nav-icon"> </i> Whatsapp
-          </a>
-        </li>
-        <li class="nav-item ps-1">
-          <a
-            onclick="return gtag_report_conversion('tel:+91123456789 ');"
-            href="tel:+91123456789 "
-            class="text-decoration-none text-white">
-            <i class="fa-solid fa-phone me-2"></i> Call Us
-          </a>
-        </li>
-
-        <li
-          class="nav-item"
-          data-bs-toggle="modal"
-          data-bs-target="#popupModal">
-          <i class="fa-solid fa-download nav-icon"></i> Brochure
-        </li>
-      </ul>
-    </div>
-
-    <!-- Modal -->
+    <!-- Lead Capture Modal Form -->
     <div
       class="modal fade"
       id="popupModal"
       tabindex="-1"
-      aria-labelledby="ModalLabel"
+      aria-labelledby="leadModalLabel"
       aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
-          <!-- Modal Title -->
           <div class="modal-header">
-            <!-- <h1 class="modal-title fs-5" id="ModalLabel">Modal title</h1> -->
+            <h5 class="modal-title" id="leadModalLabel">Enquire Now</h5>
             <button
               type="button"
-              class="btn-close"
+              class="btn-close btn-close-white"
               data-bs-dismiss="modal"
               aria-label="Close"></button>
           </div>
-
           <!-- Modal Body -->
           <div class="modal-body">
-            <div class="container text-center">
-              <img src="img/logo/logo.svg" alt="" height="80px" />
+            <div class="container text-center modal-logo">
+              <img src="img/logo/logo.png" alt="" height="80px" />
+
               <p class="mt-2">Register Here And Avail The Best Offers!!</p>
             </div>
             <div class="container">
@@ -351,7 +379,11 @@
                         maxlength="10"
                         pattern="[0-9]{10}"
                         placeholder="Phone Number *"
-                        oninvalid="setCustomValidity('Please enter a valid phone number. e.g., 12345-67890')"
+                        oninvalid="
+                          setCustomValidity(
+                            'Please enter a valid phone number. e.g., 12345-67890',
+                          )
+                        "
                         oninput="setCustomValidity('')"
                         required />
                     </div>
@@ -368,15 +400,21 @@
                         data-gtm-form-interact-field-id="0" />
 
                       <label
-                        class="ps-2 pb-2 custom-control-label"
-                        for="privacy_check_modal">
-                        I consent to the use of my provided data in accordance
-                        with the
+                        class="ps-2 pb-2 custom-control-label text-left"
+                        for="privacy_check_modal"
+                        style="font: inherit; color: black">
+                        Please be advised that this website is not intended to
+                        facilitate any sales transactions. I acknowledge that
+                        the project in which I am expressing interest has not
+                        yet secured RERA clearance. The purpose of this website
+                        is solely to generate interest and gather information. I
+                        hereby consent to the use of my provided data in
+                        accordance with the established
                         <a
                           href="privacy_policy.html"
                           target="_blank"
-                          style="font: inherit; color: inherit"
-                          >privacy policy</a
+                          style="font: inherit; color: black"
+                          >privacy policy.</a
                         >.</label
                       >
                     </div>
@@ -392,20 +430,57 @@
                     </p>
                   </form>
                 </div>
+
+                <!-- <div class="or">or</div> -->
+
+                <!-- <div class="slide-submit poppins-regular poppins-regular">
+                  <button
+                    id="slide-submit-btn"
+                    class="poppins-regular ui-draggable ui-draggable-handle"
+                    style="left: 0px; transition: 100ms linear">
+                    <img
+                      loading="lazy"
+                      alt="Delta Prestige"
+                      src="./img/extras/swipe-arrow.png" />
+                  </button>
+                  <label> Slide to connect on WhatsApp</label>
+                </div> -->
               </div>
             </div>
           </div>
-
-          <!-- Modal Footer -->
-          <div class="modal-footer"></div>
         </div>
       </div>
     </div>
 
-    <!-- Jquery -->
-    <script
-      src="https://code.jquery.com/jquery-3.7.1.min.js"
-      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-      crossorigin="anonymous"></script>
+    <!-- Mobile Footer Fixed Button -->
+    <div class="container-fluid fixed-bottom action-footer-container">
+      <ul class="nav nav-fill action-footer">
+        <li
+          class="nav-item ps-1"
+          data-bs-toggle="modal"
+          data-bs-target="#popupModal"
+          data-modal-title="Book Site Visit">
+          <a class="text-decoration-none">
+            <i class="fa-solid fa-taxi fa-beat nav-icon"> </i> Site Visit
+          </a>
+        </li>
+        <li class="nav-item ps-1" data-modal-title="Call Now">
+          <a
+            class="text-decoration-none"
+            onclick="return gtag_report_conversion('tel:+919145457464');"
+            href="tel:+919145457464">
+            <i class="fa-solid fa-phone fa-beat me-2"></i> Call Now
+          </a>
+        </li>
+        <li
+          class="nav-item"
+          data-bs-toggle="modal"
+          data-bs-target="#popupModal"
+          data-modal-title="Download Brochure">
+          <i class="fa-solid fa-download fa-beat nav-icon"></i> Brochure
+        </li>
+      </ul>
+    </div>
+    <!-- Mobile Footer Fixed Button Ends -->
   </body>
 </html>
